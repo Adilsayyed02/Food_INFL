@@ -1,0 +1,150 @@
+GERMANY FOOD INFLATION & SUPPLY CHAIN ANALYSIS
+Research Questions and Project Plan
+
+============================================================
+STEP 1 — PRICE ANALYSIS (DESTATIS CPI)
+============================================================
+
+Objective:
+Understand food inflation in Germany and compare it with overall inflation.
+
+Questions:
+1. How has food inflation in Germany changed from January 2020 to the latest available month?
+2. What was the peak year-on-year food inflation rate, and in which month and year did it occur?
+3. How does food inflation compare with headline inflation over the same period?
+4. During which months did food inflation rise faster than headline inflation?
+5. How many months did food inflation remain above headline inflation?
+6. How much did food prices increase cumulatively between January 2020 and the latest month?
+7. How quickly did food inflation decline after reaching its peak?
+8. Did food inflation return to normal levels, or did food prices remain elevated even after inflation slowed?
+9. Which food categories experienced the highest and lowest price increases?
+10. How did month-on-month food inflation change during the major inflation period compared with 2020?
+
+Suggested charts:
+- Line chart: Food CPI vs. headline CPI over time.
+- Line chart: Year-on-year food inflation vs. headline inflation.
+- Column chart: Month-on-month food inflation.
+- Bar chart: Inflation by food category.
+
+Important note:
+A decline in the inflation rate does not necessarily mean prices have fallen. It usually means prices are increasing more slowly.
+
+
+============================================================
+STEP 2 — PRODUCT LANDSCAPE (OPEN FOOD FACTS)
+============================================================
+
+Objective:
+Understand product composition, nutritional quality, processing levels, and brand differences.
+
+Data required:
+Product-level Open Food Facts data with fields such as product name, brand, category, Nutri-Score, NOVA group, sugar, salt, fat, and allergens. These fields are not visible in the supplied CPI screenshot.
+
+A. Data cleaning and product coverage
+1. How many products are available before and after removing duplicates?
+2. What percentage of products have missing brand, category, Nutri-Score, NOVA group, sugar, salt, or fat values?
+3. Which product categories contain the most missing nutritional information?
+4. Which brands and categories appear most frequently in the dataset?
+5. How many products remain available for analysis after cleaning?
+
+B. Nutri-Score and NOVA analysis
+6. What percentage of products in each category have Nutri-Scores A, B, C, D, and E?
+7. Which food categories have the highest share of Nutri-Score A and B products?
+8. Which categories have the highest share of Nutri-Score D and E products?
+9. What percentage of products belong to NOVA groups 3 and 4?
+10. Which categories have the highest share of ultra-processed products (NOVA group 4)?
+11. Do categories with a high share of NOVA group 4 products also tend to have poorer Nutri-Scores?
+
+C. Brands and nutritional composition
+12. Which are the top 10 brands by product count in each category?
+13. Which categories have the highest average sugar, salt, and fat per 100 g?
+14. Which brands have the highest average sugar, salt, and fat content within comparable product categories?
+15. How frequently are common allergens such as milk, gluten, soy, eggs, and nuts declared?
+16. Which categories contain the highest proportion of products declaring multiple allergens?
+
+Suggested charts:
+- 100% stacked bar chart: Nutri-Score distribution by category.
+- Bar chart: NOVA group 4 share by category.
+- Bar chart: Average sugar, salt, and fat by category.
+- Bar chart: Top brands by product count.
+- Heatmap: Allergen frequency by category.
+
+Important notes:
+- Compare nutritional values per 100 g or 100 ml.
+- Calculate each metric's percentage using products with valid values for that metric.
+- This helps avoid misleading comparisons caused by missing data.
+
+
+============================================================
+STEP 3 — SUPPLY CHAIN ANALYSIS (EUROSTAT + CPI)
+============================================================
+
+Objective:
+Investigate whether food manufacturing activity is associated with food price changes and whether changes occur before or after inflation.
+
+Relevant fields visible in the supplied dataset:
+- date
+- food_cpi_ind     Food CPI Index: Measures the overall price level of food compared with a base period.
+- food_cpi_yoy_pct Year-on-Year Food Inflation (%): Percentage change in food prices compared with the same month last year.
+- food_cpi_mom_pct Month-on-Month Food Inflation (%): Percentage change in food prices compared with the previous month.
+- mfg_sector       Manufacturing Sector: The industry producing the food, such as meat processing, dairy, or bakery products.
+- mfg_turnover_ind Manufacturing Turnover Index: Measures changes in the sales turnover of manufacturers compared with a base period.
+
+Questions:
+1. How has food manufacturing turnover changed from 2020 to the latest month?
+2. Which manufacturing sectors experienced the largest increases or decreases in turnover?
+3. How does manufacturing turnover move alongside the food CPI index?
+4. Does an increase in food manufacturing turnover tend to occur before or after an increase in food prices?
+5. What is the correlation between manufacturing turnover and food CPI in the same month?
+6. What is the correlation when manufacturing turnover is shifted by one, two, three, or six months?
+7. Which lag produces the strongest correlation between manufacturing turnover and food price inflation?
+8. Does the relationship differ across bakery, dairy, fish, fruit and vegetable, meat, beverage, and other food manufacturing sectors?
+9. Are there periods when manufacturing turnover increased while food CPI remained stable or declined?
+10. What practical implications could these patterns have for procurement costs, supplier negotiations, and category planning?
+
+Suggested charts:
+- Dual-axis line chart: Food CPI index vs. manufacturing turnover index.
+- Line chart: Food CPI year-on-year inflation vs. manufacturing turnover growth.
+- Heatmap: Correlation by manufacturing sector and lag.
+- Bar chart: Correlations at 0-, 1-, 2-, 3-, and 6-month lags.
+
+Important notes:
+- Turnover is not the same as production volume. It may rise because of higher selling prices rather than greater output.
+- Lag correlation shows association, not causation.
+
+
+============================================================
+FINAL BUSINESS TAKEAWAYS
+============================================================
+
+1. Procurement strategy:
+Which food categories experienced the strongest inflation, and how could procurement managers use this information to review contracts, negotiate prices, or identify alternative suppliers?
+
+2. Category management:
+Which categories have high nutritional risk, a high share of ultra-processed products, or significant brand concentration, and how could retailers use these findings to improve assortment planning?
+
+3. Supply chain planning:
+Can manufacturing turnover provide a useful early-warning indicator for food price changes, and how reliable is that relationship across different sectors?
+
+
+============================================================
+RECOMMENDED PROJECT STRUCTURE
+============================================================
+
+Step 1 — Dataset: Destatis CPI
+Main output: Inflation trends, peak, lag, and normalisation.
+
+Step 2 — Dataset: Open Food Facts
+Main output: Nutritional quality, processing levels, and brand analysis.
+
+Step 3 — Dataset: Eurostat + CPI
+Main output: Turnover correlations and procurement insights.
+
+
+DATA QUALITY REMINDER
+============================================================
+
+The supplied screenshot includes the label:
+"SYNTHETIC practice data - not official statistics"
+
+Verify the dataset source before presenting results as official German statistics. The screenshot supports beginning Steps 1 and 3, but Step 2 requires a separate product-level Open Food Facts dataset.
